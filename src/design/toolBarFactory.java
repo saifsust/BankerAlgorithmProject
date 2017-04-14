@@ -1,4 +1,5 @@
 package design;
+
 import algorithm.data;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -32,8 +33,8 @@ public class toolBarFactory extends application {
 		clear.setPrefSize(100, 10);
 		random.setPrefSize(100, 20);
 		addAvailable.setPrefSize(100, 20);
-		toolBar.getItems().addAll(new Separator(), setComboBox(), new Separator(), addAvailable, new Separator(),
-				random, clear, new Separator());
+		toolBar.getItems().addAll(new Separator(), setComboBox(), new Separator(), addAvailable, new Separator(), clear,
+				new Separator());
 		setAvailableButton();
 		setClearButton();
 		setRandomButton();
@@ -66,7 +67,7 @@ public class toolBarFactory extends application {
 			public void handle(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				// System.out.println("Add AvailAble");
-                comboBox.setValue(null);
+				comboBox.setValue(null);
 				clearFactory();
 			}
 
@@ -117,9 +118,9 @@ public class toolBarFactory extends application {
 					addAvailableATextField();
 					addAvailableBTextField();
 					addAvailableCTextField();
-					
+
 					maximumAllocationTable = new TableFactory().getThreeColumnsTable();
-					needTable =new TableFactory().getThreeColumnsTable();
+					needTable = new TableFactory().getThreeColumnsTable();
 					allocationTable = new TableFactory().getThreeColumnsTable();
 
 				} else {
@@ -140,7 +141,7 @@ public class toolBarFactory extends application {
 						addAvailableCTextField();
 						addAvailableDTextField();
 						maximumAllocationTable = new TableFactory().getFourColumnsTable();
-						needTable =new TableFactory().getFourColumnsTable();
+						needTable = new TableFactory().getFourColumnsTable();
 						allocationTable = new TableFactory().getFourColumnsTable();
 
 					} else {
@@ -164,7 +165,7 @@ public class toolBarFactory extends application {
 							addAvailableDTextField();
 							addAvailableETextField();
 							maximumAllocationTable = new TableFactory().getFiveColumnsTable();
-							needTable =new TableFactory().getFiveColumnsTable();
+							needTable = new TableFactory().getFiveColumnsTable();
 							allocationTable = new TableFactory().getFiveColumnsTable();
 						} else {
 							if (selected == "6") {
@@ -190,7 +191,7 @@ public class toolBarFactory extends application {
 								addAvailableETextField();
 								addAvailableFTextField();
 								maximumAllocationTable = new TableFactory().getSixColumnsTable();
-								needTable =new TableFactory().getSixColumnsTable();
+								needTable = new TableFactory().getSixColumnsTable();
 								allocationTable = new TableFactory().getSixColumnsTable();
 							} else {
 								availableSevenFieldEvent();
@@ -218,15 +219,13 @@ public class toolBarFactory extends application {
 								addAvailableFTextField();
 								addAvailableGTextField();
 								maximumAllocationTable = new TableFactory().getSevenColumnsTable();
-								needTable =new TableFactory().getSevenColumnsTable();
+								needTable = new TableFactory().getSevenColumnsTable();
 								allocationTable = new TableFactory().getSevenColumnsTable();
 							}
 						}
 					}
 				}
 
-				
-				
 				allocationTable.setItems(allocationObservableList);
 				maximumAllocationTable.setItems(maxAllocationObservableList);
 				needTable.setItems(needObservableList);
@@ -238,9 +237,10 @@ public class toolBarFactory extends application {
 		});
 		return comboBox;
 	}
+
 	private TableView<data> allocationTable;
 	private TableView<data> maximumAllocationTable;
-	private TableView<data> needTable ;
+	private TableView<data> needTable;
 	private Scene scene = new Scene(availableRoot, 550, 200);
 	private static Button clear = new Button("Clear");
 	private static Button random = new Button("Random");
